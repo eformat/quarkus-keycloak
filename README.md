@@ -3,10 +3,10 @@
 Keycloak Quarkus Angular demo showing:
 
 - UI uses `OpenID Connect` and `OAuth2` using `public` access type (no secret in ui code required). This involves `Authorization code grant with PKCE` - https://devansvd.com/oauth/#authorization-code-grant-with-pkce
-- `angular-oauth2-oidc` - Angular, OIDC UAuth2 - https://github.com/manfredsteyer/angular-oauth2-oidc
+- `angular-oauth2-oidc` - Angular, OIDC OAuth2 - https://github.com/manfredsteyer/angular-oauth2-oidc
 - `Code` flow and `PKCE` to align with the current draft of the OAuth 2.0 Security Best Current Practice document - https://tools.ietf.org/html/rfc6749
 - `Pixy` - RFC 7636 - Authorization Code Grant with PKCE (Proof Key for Code Exchange by OAuth Public Clients) - https://tools.ietf.org/html/rfc7636
-- Server uses `OAuth2` using `confidential` access type (client secret required) with `quarkus-keycloak-authorization extension` - https://quarkus.io/guides/security-keycloak-authorization
+- Server uses `OpenID Connect` and `OAuth2` using `confidential` access type (client secret required) with `quarkus-keycloak-authorization extension` - https://quarkus.io/guides/security-keycloak-authorization
 
 Angular client uses [`APP_INITIALIZER`](ui/src/app/auth.config.module.ts) to initiate auth module and components and login to the `quarkus` realm in keycloak prior to loading.
 
