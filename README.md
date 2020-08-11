@@ -1,6 +1,6 @@
 # quarkus angular keycloak
 
-Keycloak Quarkus Angular showing:
+Keycloak Quarkus Angular demo showing:
 
 - UI uses `OpenID Connect` and `OAuth2` using `public` access type (no secret in ui code required). This involves `Authorization code grant with PKCE` - https://devansvd.com/oauth/#authorization-code-grant-with-pkce
 - `angular-oauth2-oidc` - Angular, OIDC UAuth2 - https://github.com/manfredsteyer/angular-oauth2-oidc
@@ -14,7 +14,7 @@ The `Auth Guard` and `Auth Interceptor` components map `roles` to component uri'
 
 In Quarkus, Keycloak is responsible for managing the roles and deciding who can access which routes. See the Keycloak `backend-serivce` client `Authorizations` tab for policy and permission details. The server side extension fetches resources on-demand from Keycloak where their URI are used to map the resources in your application that should be protected.
 
-There is no SSL configured (this is on purpose to keep auth code clear).
+There is no SSL configured (this is on purpose to keep auth code clear, obviously don't do this in production!)
 
 ![images/ui-keycloak.png](images/ui-keycloak.png)
 
