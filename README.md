@@ -28,7 +28,7 @@ Browse to Admin Console and login as admin/admin
 http://localhost:8180
 ```
 
-Add Realm -> Import File
+Select `Master -> Add Realm -> Select File` to create quarkus realm
 ```bash
 quarkus-realm.json
 ```
@@ -43,29 +43,36 @@ Start Angular UI
 ```bash
 cd ui
 npm i
-ng serve --open
+npm run start
 ```
 
-Users and Permissions
+User/Login and Roles in quarkus realm
 ```bash
 admin / admin - roles [admin, user]
 alice / alice - roles [user]
 ```
 
-The User Interface has 3 components, each calls a service API XMLHttpRequest endpoint, which is displayed in console.log
+Use the UI broswer links and the browser console (F12 developer tools in chrome) for debug.
+
+The User Interface has 3 angular components, each calls a service API XMLHttpRequest endpoint, which is displayed in console.log
 ```bash
 admin - localhost:8080/api/admin
 user - localhost:8080/api/users/me
 public - localhost:8080/api
 ```
+
+- `alice` will be able to see the `User and Public Component` endpoints but not be able to browse to the `Admin Component` endpoint. 
+- `admin` user can browse to the all component endpoints.
+- anonymous acess is available to the public api endpoint.
+
 Unauthenticated access to admin, user endpoints will result in:
 ```bash
 http localhost:8080/api/admin
 HTTP/1.1 401 Unauthorized
 content-length: 0
-
 ```
-The public endpoint is always available:
+
+The public endpoint is always available e.g. from cli:
 ```bash
 http localhost:8080/api
 HTTP/1.1 200 OK
