@@ -2,7 +2,6 @@ package org.acme.rest;
 
 import io.quarkus.security.Authenticated;
 import io.quarkus.security.identity.SecurityIdentity;
-import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonObject;
 import org.jboss.resteasy.annotations.cache.NoCache;
 
