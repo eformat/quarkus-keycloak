@@ -14,6 +14,8 @@ The `Auth Guard` and `Auth Interceptor` components map `roles` to component uri'
 
 In Quarkus, Keycloak is responsible for managing the roles and deciding who can access which routes. See the Keycloak `backend-serivce` client `Authorizations` tab for policy and permission details. The server side extension fetches resources on-demand from Keycloak where their URI are used to map the resources in your application that should be protected.
 
+There is no SSL configured (this is on purpose to keep auth code clear).
+
 ![images/ui-keycloak.png](images/ui-keycloak.png)
 
 ## Running the demo locally
