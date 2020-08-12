@@ -7,6 +7,7 @@ Keycloak Quarkus Angular demo showing:
 - `Code` flow and `PKCE` to align with the current draft of the OAuth 2.0 Security Best Current Practice document - https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14
 - `Pixy` - RFC 7636 - Authorization Code Grant with PKCE (Proof Key for Code Exchange by OAuth Public Clients) - https://tools.ietf.org/html/rfc7636
 - Server uses `OpenID Connect` and `OAuth2` using `confidential` access type (client secret required) with `quarkus-keycloak-authorization extension` - https://quarkus.io/guides/security-keycloak-authorization
+- OAuth 2.1 draft has a number of changes that we would like to follow - https://tools.ietf.org/html/draft-parecki-oauth-v2-1-01#section-12
 
 Angular client uses [`APP_INITIALIZER`](ui/src/app/auth.config.module.ts) to initiate auth module and components and login to the `quarkus` realm in keycloak prior to loading.
 
@@ -14,7 +15,7 @@ The `Auth Guard` and `Auth Interceptor` components map `roles` to component uri'
 
 In Quarkus, Keycloak is responsible for managing the roles and deciding who can access which routes. See the Keycloak `backend-serivce` client `Authorizations` tab for policy and permission details. The server side extension fetches resources on-demand from Keycloak where their URI are used to map the resources in your application that should be protected.
 
-There is no TLS configured (this is on purpose to keep auth code clear, obviously don't do this in production!)
+There is no TLS configured (this is on purpose to keep auth code clear, obviously don't do this in production! and we need TLS to be able to use all OAuth 2.1 best practices like server constrained key rotations)
 
 ![images/ui-keycloak.png](images/ui-keycloak.png)
 
