@@ -8,3 +8,6 @@ services:
       DB_VENDOR: h2
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
+      JAVA_OPTS: "-Dkeycloak.profile.feature.scripts=enabled -Dkeycloak.profile.feature.upload_scripts=enabled -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/mnt/quarkus-keycloak/quarkus-realm.json"
+    volumes:
+      - /home/mike/git/quarkus-keycloak:/mnt/quarkus-keycloak:Z
