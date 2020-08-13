@@ -19,7 +19,8 @@ export class AuthConfigService {
     return new Promise((resolveFn, rejectFn) => {
       // setup oauthService
       this.oauthService.configure(this.authConfig);
-      this.oauthService.setStorage(localStorage);
+      //this.oauthService.setStorage(localStorage);
+      this.oauthService.setStorage(sessionStorage);
       this.oauthService.tokenValidationHandler = new NullValidationHandler();
 
       // subscribe to token events
